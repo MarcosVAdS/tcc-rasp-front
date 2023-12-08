@@ -4,21 +4,23 @@ const axios = require('axios')
 
 const createWindow = () => {
     const window = new BrowserWindow({
-        width: 800,
-        height: 600,
+        width: 1200,
+        height: 900,
         webPreferences: {
             preload: path.join(__dirname, 'preload.js')
         }
     })
 
     window.setTitle('Get Coffe')
+    //window.maximize()
     window.loadFile('index.html')
 }
 
-const createQrCodeInfo = async () => {
+const createQrCodeInfo = async (event, value) => {
     const qrcodeinfo = await axios({
         method: "GET",
-        url: "http://localhost:3000/"
+        url: "http://localhost:3000/",
+        params: value
     }).then(function(res) {
         return res.data
     }).catch(function (error) {
