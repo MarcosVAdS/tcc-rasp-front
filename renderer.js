@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         qrCodeImg.src = `${qrcode.imagemQrcode}`
         qrCodeImg.alt = "qrcode para pagamento pix"
-        qrCodeImg.style.width = '50vw'
-        qrCodeImg.style.height = '50vh'
+        qrCodeImg.style.width = '40vw'
+        qrCodeImg.style.height = '40vh'
     
         imgContainer.appendChild(qrCodeImg)
     })
@@ -41,8 +41,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
         qrCodeImg.src = `${qrcode.imagemQrcode}`
         qrCodeImg.alt = "qrcode para pagamento pix"
-        qrCodeImg.style.width = '50vw'
-        qrCodeImg.style.height = '50vh'
+        qrCodeImg.style.width = '40vw'
+        qrCodeImg.style.height = '40vh'
     
         imgContainer.appendChild(qrCodeImg)
     }) 

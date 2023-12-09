@@ -81,6 +81,15 @@ body {
     cursor: pointer;
 }
 
+.cancel-button {
+    border-radius: 5px;
+    background-color: #EE4B2B;
+    color: #FFF;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+}
+
 .modal {
     display: none;
     position: fixed;
@@ -102,8 +111,12 @@ body {
     width: 60vw;
     height: 60vh;
     border-radius: 15px;
+}
+
+.content {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
   
 .close {
