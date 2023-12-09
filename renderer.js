@@ -3,26 +3,48 @@ const cerealButton = document.getElementById('cereal')
 const qrCodeImg = new Image();
 const imgContainer = document.getElementById('img-container')
 
-cokeButton.addEventListener('click', async () => {
-    const qrcode = await window.data.createQrCodeInfo({
-        product: 'coke',
-        value: '5.00'
+document.addEventListener('DOMContentLoaded', function() {
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const modal = document.getElementById('myModal');
+
+    cerealButton.addEventListener('click', async () => {
+        modal.style.display = 'block'
+
+        closeModalBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+        
+        const qrcode = await window.data.createQrCodeInfo({
+            product: 'cereal',
+            value: '5.00'
+        })
+
+        qrCodeImg.src = `${qrcode.imagemQrcode}`
+        qrCodeImg.alt = "qrcode para pagamento pix"
+        qrCodeImg.style.width = '50vw'
+        qrCodeImg.style.height = '50vh'
+    
+        imgContainer.appendChild(qrCodeImg)
     })
 
-    qrCodeImg.src = `${qrcode.imagemQrcode}`
-    qrCodeImg.alt = "qrcode para pagamento pix"
+    cokeButton.addEventListener('click', async () => {
+        modal.style.display = 'block'
 
-    imgContainer.appendChild(qrCodeImg)
-})
+        closeModalBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
 
-cerealButton.addEventListener('click', async () => {
-    const qrcode = await window.data.createQrCodeInfo({
-        product: 'cereal',
-        value: '5.00'
-    })
+        const qrcode = await window.data.createQrCodeInfo({
+            product: 'coke',
+            value: '5.00'
+        })
+    
+        qrCodeImg.src = `${qrcode.imagemQrcode}`
+        qrCodeImg.alt = "qrcode para pagamento pix"
+        qrCodeImg.style.width = '50vw'
+        qrCodeImg.style.height = '50vh'
+    
+        imgContainer.appendChild(qrCodeImg)
+    }) 
+});
 
-    qrCodeImg.src = `${qrcode.imagemQrcode}`
-    qrCodeImg.alt = "qrcode para pagamento pix"
-
-    imgContainer.appendChild(qrCodeImg)
-})
