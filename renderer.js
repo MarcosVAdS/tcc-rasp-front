@@ -1,5 +1,4 @@
-const cokeButton = document.getElementById('coke')
-const cerealButton = document.getElementById('cereal')
+const coffeeButton = document.getElementById('coffee')
 const qrCodeImg = new Image();
 const imgContainer = document.getElementById('img-container')
 
