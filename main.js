@@ -1,6 +1,9 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
-const path = require('node:path');
+const path = require('node:path')
 const axios = require('axios')
+// const rpio = require('rpio')
+
+//rpio.open(16, rpio.OUTPUT, rpio.LOW)
 
 const createWindow = () => {
     const window = new BrowserWindow({
@@ -30,8 +33,17 @@ const createQrCodeInfo = async (event, value) => {
     return qrcodeinfo
 }
 
+const waterPumpActivate = () => {
+    /** 
+    rpio.write(16, rpio.HIGH)
+    rpio.msleep(500)
+    rpio.write(16, rpio.LOW)
+    */
+}
+
 app.whenReady().then(() => {
     ipcMain.handle('create-qrcode', createQrCodeInfo)
+    ipcMain.handle('water-pump-activate', waterPumpActivate)
     createWindow()
     app.on('activate', () => {
         if (BrowserWindow.getAllWindows().length === 0) {

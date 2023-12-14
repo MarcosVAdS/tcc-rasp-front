@@ -25,26 +25,10 @@ document.addEventListener('DOMContentLoaded', function() {
         qrCodeImg.style.height = '40vh'
     
         imgContainer.appendChild(qrCodeImg)
+        
+        //window.data.waterPumpStatus()
+
+        //setTimeout(window.data.waterPumpStatus(), 5000)
     })
-
-    cokeButton.addEventListener('click', async () => {
-        modal.style.display = 'block'
-
-        closeModalBtn.addEventListener('click', function() {
-            modal.style.display = 'none';
-        });
-
-        const qrcode = await window.data.createQrCodeInfo({
-            product: 'coke',
-            value: '5.00'
-        })
-    
-        qrCodeImg.src = `${qrcode.imagemQrcode}`
-        qrCodeImg.alt = "qrcode para pagamento pix"
-        qrCodeImg.style.width = '40vw'
-        qrCodeImg.style.height = '40vh'
-    
-        imgContainer.appendChild(qrCodeImg)
-    }) 
 });
 
