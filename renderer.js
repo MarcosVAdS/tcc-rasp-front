@@ -5,8 +5,9 @@ const imgContainer = document.getElementById('img-container')
 document.addEventListener('DOMContentLoaded', function() {
     const closeModalBtn = document.getElementById('closeModalBtn');
     const modal = document.getElementById('myModal');
+    const alert = document.getElementById('alert')
 
-    cerealButton.addEventListener('click', async () => {
+    coffeeButton.addEventListener('click', async () => {
         modal.style.display = 'block'
 
         closeModalBtn.addEventListener('click', function() {
@@ -24,6 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
         qrCodeImg.style.height = '40vh'
     
         imgContainer.appendChild(qrCodeImg)
+
+        alert.style.display = 'block'
         
         //window.data.waterPumpStatus()
 
